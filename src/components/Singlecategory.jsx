@@ -1,4 +1,26 @@
+import { useState, useEffect } from "react"
+import axios from "axios"
+import Formsubcategory from "./Formsubcategory"
+import Subcategories from "./Subcategories"
+
+const url = "http://localhost:3000/subcategories"
+
 const Singlecategory = ({ item, removeCategory }) => {
+  const [subcategoryArray, setsubcategoryArray] = useState([])
+
+  const getSubcategories = async () => {
+    try {
+      const response = await axios.get(url + `/${item.id_key}`)
+      setsubcategoryArray(response.data.result)
+    } catch (error) {}
+  }
+
+  useEffect(() => {
+    getSubcategories()
+    console.log(subcategoryArray)
+  }, [])
+
+  const removeSubcategory = () => {}
   return (
     <section className="ml-8 border border-gray-300 p-2">
       <div className="  my-4 flex">
@@ -10,9 +32,14 @@ const Singlecategory = ({ item, removeCategory }) => {
           Borrar
         </button>
       </div>
-      <h3 className="relative ml-16 border border-gray-300 p-2">
-        Subcategorias
-      </h3>
+      <div className="relative ml-16 border border-gray-300 p-2">
+        <h3>Subcategorias</h3>
+        <Formsubcategory getSubcategories={getSubcategories} item={item} />
+        <Subcategories
+          subcategoryArray={subcategoryArray}
+          removeSubcategory={removeSubcategory}
+        />
+      </div>
     </section>
   )
 }
