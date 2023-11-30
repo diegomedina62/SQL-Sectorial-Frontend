@@ -10,19 +10,28 @@ function App() {
     try {
       const response = await axios.get(url)
       setCategoryArray(response.data.result)
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   }
   useEffect(() => {
     getCategories()
   }, [Formcategory])
 
-  const removeCategory = () => {}
+  const removeCategory = async (categoryid) => {
+    try {
+      const response = await axios.delete(url + `/${categoryid}`)
+      getCategories()
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <>
       <h1 className="text-3xl">Gestion de base de datos SQL, Sectorial S.A</h1>
       <div className="border border-gray-300 p-2">
-        <h2 className="text-xl">Categorías </h2>
+        <h2 className="text-2xl">Categorías </h2>
         <Formcategory getCategories={getCategories} />
         <Categories
           categoryArray={categoryArray}
