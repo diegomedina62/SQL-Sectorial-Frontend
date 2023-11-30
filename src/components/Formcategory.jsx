@@ -2,7 +2,7 @@ import { useState } from "react"
 import axios from "axios"
 const url = "http://localhost:3000/categories"
 
-const Formcategory = () => {
+const Formcategory = ({ getCategories }) => {
   const [newItemName, setNewItemName] = useState("")
 
   const handleSubmit = async (e) => {
@@ -12,7 +12,11 @@ const Formcategory = () => {
       const response = await axios.post(url, {
         CategoryName: newItemName,
       })
-    } catch (error) {}
+      setNewItemName("")
+      getCategories()
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <form onSubmit={handleSubmit}>
