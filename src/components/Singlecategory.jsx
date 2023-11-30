@@ -17,10 +17,17 @@ const Singlecategory = ({ item, removeCategory }) => {
 
   useEffect(() => {
     getSubcategories()
-    console.log(subcategoryArray)
   }, [])
 
-  const removeSubcategory = () => {}
+  const removeSubcategory = async (categoryid) => {
+    try {
+      const response = await axios.delete(url + `/${categoryid}`)
+      getSubcategories()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <section className="ml-8 border border-gray-300 p-2">
       <div className="  my-4 flex">

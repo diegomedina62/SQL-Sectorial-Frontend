@@ -1,12 +1,15 @@
 import Individualsubcat from "./Individualsubcat"
 
-const Subcategories = ({ subcategoryArray, removeSubcategories }) => {
+const Subcategories = ({ subcategoryArray, removeSubcategory }) => {
   return (
     <section>
       {subcategoryArray.map((item) => {
         return (
           <section>
-            <Individualsubcat item={item} />
+            <Individualsubcat
+              item={item}
+              removeSubcategory={removeSubcategory}
+            />
           </section>
         )
       })}
