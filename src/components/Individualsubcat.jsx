@@ -1,6 +1,24 @@
+import { useState, useEffect } from "react"
+import axios from "axios"
 import Formsubject from "./subjectComponent/Formsubject"
+import Subjects from "./subjectComponent/Subjects"
+
+const url = "http://localhost:3000/subjects"
 
 const Individualsubcat = ({ item, removeSubcategory }) => {
+  const [subjectArray, setSubjectArray] = useState([])
+
+  const getSubjects = async () => {
+    try {
+      const response = await axios.get(url + `/${item.id_key}`)
+      setSubjectArray(response.data.result)
+    } catch (error) {}
+  }
+
+  useEffect(() => {
+    getSubjects()
+  }, [])
+
   return (
     <section className="ml-20 border border-gray-300 p-2">
       <div className="  my-4 flex">
@@ -16,7 +34,8 @@ const Individualsubcat = ({ item, removeSubcategory }) => {
       </div>
       <div className="relative ml-16 border border-gray-300 p-2">
         <h3>Temas</h3>
-        <Formsubject item={item} />
+        <Formsubject item={item} getSubjects={getSubjects} />
+        <Subjects subjectArray={subjectArray} />
       </div>
     </section>
   )

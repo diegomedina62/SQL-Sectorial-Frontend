@@ -2,10 +2,9 @@ import { useState } from "react"
 import axios from "axios"
 const url = "http://localhost:3000/subjects"
 
-const Formsubject = ({ item }) => {
+const Formsubject = ({ item, getSubjects }) => {
   const [newItemName, setNewItemName] = useState("")
 
-  console.log(item)
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!newItemName) return
@@ -15,6 +14,7 @@ const Formsubject = ({ item }) => {
         SubcategoryIdKey: item.id_key,
       })
       setNewItemName("")
+      getSubjects()
     } catch (error) {
       console.log(error)
     }
