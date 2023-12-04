@@ -1,4 +1,5 @@
 import Singlecategory from "./Singlecategory"
+import { nanoid } from "nanoid"
 
 const Categories = ({ categoryArray, removeCategory }) => {
   return (
@@ -6,7 +7,7 @@ const Categories = ({ categoryArray, removeCategory }) => {
       {categoryArray.map((item) => {
         return (
           <Singlecategory
-            key={item.id_key}
+            key={nanoid()}
             item={item}
             removeCategory={removeCategory}
           />

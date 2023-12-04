@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid"
 import SingleSubject from "./SingleSubject"
 
 const Subjects = ({ subjectArray, removeSubject }) => {
@@ -5,9 +6,11 @@ const Subjects = ({ subjectArray, removeSubject }) => {
     <section>
       {subjectArray.map((item) => {
         return (
-          <section>
-            <SingleSubject item={item} removeSubject={removeSubject} />
-          </section>
+          <SingleSubject
+            key={nanoid()}
+            item={item}
+            removeSubject={removeSubject}
+          />
         )
       })}
     </section>
