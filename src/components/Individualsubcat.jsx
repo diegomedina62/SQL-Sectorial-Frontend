@@ -35,6 +35,12 @@ const Individualsubcat = ({ item, removeSubcategory }) => {
         <button
           className="mx-4 rounded-full bg-gray-300 px-4 hover:bg-green-300"
           onClick={() => {
+            if (subjectArray.length != 0) {
+              alert(
+                "no se puede borrar subcategoria. Primero elimine los temas para continuar",
+              )
+              return
+            }
             removeSubcategory(item.id_key)
           }}
         >

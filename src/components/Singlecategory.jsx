@@ -34,7 +34,15 @@ const Singlecategory = ({ item, removeCategory }) => {
         <h2>{item.CategoryName}</h2>
         <button
           className="mx-4 rounded-full bg-gray-300 px-4 hover:bg-sky-700"
-          onClick={() => removeCategory(item.id_key)}
+          onClick={() => {
+            if (subcategoryArray.length != 0) {
+              alert(
+                "no se puede borrar la categoría. Primero elimine las subcategorias para continuar",
+              )
+              return
+            }
+            removeCategory(item.id_key)
+          }}
         >
           Borrar
         </button>
