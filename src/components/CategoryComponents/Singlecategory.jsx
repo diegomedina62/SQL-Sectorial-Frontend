@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
-import Formsubcategory from "./Formsubcategory"
-import Subcategories from "./Subcategories"
+import Formsubcategory from "../subcategoryComponents/Formsubcategory"
+import Subcategories from "../subcategoryComponents/Subcategories"
 
 const url = "http://localhost:3000/subcategories"
 const activeButton = "mx-4 rounded-full bg-gray-300 px-4 hover:bg-sky-400"

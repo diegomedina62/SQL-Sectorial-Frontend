@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
-import Formcategory from "./components/Formcategory"
-import Categories from "./components/Categories"
+import Formcategory from "./components/CategoryComponents/Formcategory"
+import Categories from "./components/CategoryComponents/Categories"
 const url = "http://localhost:3000/categories"
 
 function App() {

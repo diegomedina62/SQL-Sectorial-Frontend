@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
-import Formsubject from "./subjectComponent/Formsubject"
-import Subjects from "./subjectComponent/Subjects"
+import Formsubject from "../subjectComponent/Formsubject"
+import Subjects from "../subjectComponent/Subjects"
 
 const url = "http://localhost:3000/subjects"
 const activeButton = "mx-4 rounded-full bg-gray-300 px-4 hover:bg-purple-300"
