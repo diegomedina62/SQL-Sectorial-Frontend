@@ -4,9 +4,12 @@ import Formsubject from "./subjectComponent/Formsubject"
 import Subjects from "./subjectComponent/Subjects"
 
 const url = "http://localhost:3000/subjects"
+const activeButton = "mx-4 rounded-full bg-gray-300 px-4 hover:bg-purple-300"
+const inactiveButton = "invisible"
 
-const Individualsubcat = ({ item, removeSubcategory }) => {
+const Individualsubcat = ({ item, removeSubcategory, parentActivation }) => {
   const [subjectArray, setSubjectArray] = useState([])
+  const [isActive, setIsActive] = useState(parentActivation)
 
   const getSubjects = async () => {
     try {
@@ -33,7 +36,7 @@ const Individualsubcat = ({ item, removeSubcategory }) => {
       <div className="  my-4 flex">
         <h2 className="text-2xl">{item.SubcategoryName}</h2>
         <button
-          className="mx-4 rounded-full bg-gray-300 px-4 hover:bg-purple-500"
+          className={isActive ? activeButton : inactiveButton}
           onClick={() => {
             if (subjectArray.length != 0) {
               alert(
@@ -46,11 +49,21 @@ const Individualsubcat = ({ item, removeSubcategory }) => {
         >
           Borrar Subcategoría
         </button>
+        <button
+          className="mx-4 rounded-full bg-gray-300 px-4 hover:bg-purple-300"
+          onClick={() => setIsActive(!isActive)}
+        >
+          {isActive ? "Desactivar subcategoría" : "Activar subcategoría"}
+        </button>
       </div>
       <div className="relative ml-16 p-2">
         <h3 className="ml-20">Temas</h3>
-        <Formsubject item={item} getSubjects={getSubjects} />
-        <Subjects subjectArray={subjectArray} removeSubject={removeSubject} />
+        {isActive && <Formsubject item={item} getSubjects={getSubjects} />}
+        <Subjects
+          subjectArray={subjectArray}
+          removeSubject={removeSubject}
+          parentActivation={isActive}
+        />
       </div>
     </section>
   )

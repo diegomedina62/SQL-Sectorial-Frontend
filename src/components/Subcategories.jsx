@@ -1,7 +1,11 @@
 import Individualsubcat from "./Individualsubcat"
 import { nanoid } from "nanoid"
 
-const Subcategories = ({ subcategoryArray, removeSubcategory }) => {
+const Subcategories = ({
+  subcategoryArray,
+  removeSubcategory,
+  parentActivation,
+}) => {
   return (
     <section>
       {subcategoryArray.map((item) => {
@@ -10,6 +14,7 @@ const Subcategories = ({ subcategoryArray, removeSubcategory }) => {
             key={nanoid()}
             item={item}
             removeSubcategory={removeSubcategory}
+            parentActivation={parentActivation}
           />
         )
       })}

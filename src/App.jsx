@@ -16,7 +16,7 @@ function App() {
   }
   useEffect(() => {
     getCategories()
-  }, [Formcategory])
+  }, [])
 
   const removeCategory = async (categoryid) => {
     try {
