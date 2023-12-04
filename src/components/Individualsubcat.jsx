@@ -1,3 +1,5 @@
+import Formsubject from "./subjectComponent/Formsubject"
+
 const Individualsubcat = ({ item, removeSubcategory }) => {
   return (
     <section className="ml-20 border border-gray-300 p-2">
@@ -14,6 +16,7 @@ const Individualsubcat = ({ item, removeSubcategory }) => {
       </div>
       <div className="relative ml-16 border border-gray-300 p-2">
         <h3>Temas</h3>
+        <Formsubject item={item} />
       </div>
     </section>
   )
