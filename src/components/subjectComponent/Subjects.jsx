@@ -1,12 +1,12 @@
 import SingleSubject from "./SingleSubject"
 
-const Subjects = ({ subjectArray }) => {
+const Subjects = ({ subjectArray, removeSubject }) => {
   return (
     <section>
       {subjectArray.map((item) => {
         return (
           <section>
-            <SingleSubject item={item} />
+            <SingleSubject item={item} removeSubject={removeSubject} />
           </section>
         )
       })}

@@ -19,6 +19,15 @@ const Individualsubcat = ({ item, removeSubcategory }) => {
     getSubjects()
   }, [])
 
+  const removeSubject = async (subjectid) => {
+    try {
+      const response = await axios.delete(url + `/${subjectid}`)
+      getSubjects()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <section className="ml-20 border border-gray-300 p-2">
       <div className="  my-4 flex">
@@ -35,7 +44,7 @@ const Individualsubcat = ({ item, removeSubcategory }) => {
       <div className="relative ml-16 border border-gray-300 p-2">
         <h3>Temas</h3>
         <Formsubject item={item} getSubjects={getSubjects} />
-        <Subjects subjectArray={subjectArray} />
+        <Subjects subjectArray={subjectArray} removeSubject={removeSubject} />
       </div>
     </section>
   )
