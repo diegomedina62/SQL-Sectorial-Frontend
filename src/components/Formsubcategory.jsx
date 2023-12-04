@@ -24,6 +24,7 @@ const Formsubcategory = ({ item, getSubcategories }) => {
       <div className="my-2 ml-20">
         <input
           type="text"
+          placeholder="Nueva Subcategoría"
           value={newItemName}
           className="rounded-full border border-black p-1"
           onChange={(e) => {

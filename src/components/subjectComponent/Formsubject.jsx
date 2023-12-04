@@ -24,6 +24,7 @@ const Formsubject = ({ item, getSubjects }) => {
       <div className=" my-2 ml-20">
         <input
           type="text"
+          placeholder="Nuevo tema"
           value={newItemName}
           className="rounded-full border border-black p-1"
           onChange={(e) => {

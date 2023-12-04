@@ -23,6 +23,7 @@ const Formcategory = ({ getCategories }) => {
       <div className="my-2">
         <input
           type="text"
+          placeholder="Nueva Categoria"
           value={newItemName}
           className="ml-20 rounded-full border border-black p-2"
           onChange={(e) => {
