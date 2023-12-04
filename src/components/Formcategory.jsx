@@ -24,7 +24,7 @@ const Formcategory = ({ getCategories }) => {
         <input
           type="text"
           value={newItemName}
-          className="rounded-full border border-black p-2"
+          className="ml-20 rounded-full border border-black p-2"
           onChange={(e) => {
             setNewItemName(e.target.value)
           }}

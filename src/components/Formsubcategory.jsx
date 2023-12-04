@@ -21,7 +21,7 @@ const Formsubcategory = ({ item, getSubcategories }) => {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div className="my-2">
+      <div className="my-2 ml-20">
         <input
           type="text"
           value={newItemName}

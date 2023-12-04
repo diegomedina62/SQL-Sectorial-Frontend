@@ -48,7 +48,7 @@ const Individualsubcat = ({ item, removeSubcategory }) => {
         </button>
       </div>
       <div className="relative ml-16 p-2">
-        <h3>Temas</h3>
+        <h3 className="ml-20">Temas</h3>
         <Formsubject item={item} getSubjects={getSubjects} />
         <Subjects subjectArray={subjectArray} removeSubject={removeSubject} />
       </div>

@@ -31,7 +31,7 @@ const Singlecategory = ({ item, removeCategory }) => {
   return (
     <section className="my-2 ml-20 border border-sky-700 p-2">
       <div className="  my-4 flex">
-        <h2 className="text-2xl">{item.CategoryName}</h2>
+        <h2 className="text-3xl">{item.CategoryName}</h2>
         <button
           className="mx-4 rounded-full bg-gray-300 px-4 hover:bg-sky-700"
           onClick={() => {
@@ -48,7 +48,7 @@ const Singlecategory = ({ item, removeCategory }) => {
         </button>
       </div>
       <div className="relative ml-16 p-2">
-        <h3>Subcategorias</h3>
+        <h3 className="ml-20">Subcategorias</h3>
         <Formsubcategory getSubcategories={getSubcategories} item={item} />
         <Subcategories
           subcategoryArray={subcategoryArray}

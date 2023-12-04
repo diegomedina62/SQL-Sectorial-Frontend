@@ -29,9 +29,11 @@ function App() {
 
   return (
     <>
-      <h1 className="text-3xl">Gestion de base de datos SQL, Sectorial S.A</h1>
-      <div className="my-4 ml-8 ">
-        <h2 className="text-2xl">Categorías </h2>
+      <h1 className="text-center text-4xl">
+        Gestion de base de datos SQL, Sectorial S.A
+      </h1>
+      <div className="m-8 my-4 ">
+        <h2 className="ml-20 text-2xl">Categorías </h2>
         <Formcategory getCategories={getCategories} />
         <Categories
           categoryArray={categoryArray}
