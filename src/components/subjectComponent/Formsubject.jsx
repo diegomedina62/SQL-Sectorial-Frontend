@@ -34,7 +34,7 @@ const Formsubject = ({ item, getSubjects }) => {
           type="submit"
           className="mx-4 rounded-full bg-gray-300 px-4 hover:bg-green-400"
         >
-          agregar
+          Agregar tema
         </button>
       </div>
     </form>

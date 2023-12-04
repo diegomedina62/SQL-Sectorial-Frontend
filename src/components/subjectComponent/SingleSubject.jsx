@@ -1,6 +1,6 @@
 const SingleSubject = ({ item, removeSubject }) => {
   return (
-    <section className="ml-28">
+    <section className="my-2 ml-28 border border-green-300 p-2">
       {" "}
       <div className="  my-4 flex">
         <h2>{item.SubjectName}</h2>

@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <h1 className="text-3xl">Gestion de base de datos SQL, Sectorial S.A</h1>
-      <div className="border border-gray-300 p-2">
+      <div className="my-4 ml-8 ">
         <h2 className="text-2xl">Categorías </h2>
         <Formcategory getCategories={getCategories} />
         <Categories

@@ -29,11 +29,11 @@ const Individualsubcat = ({ item, removeSubcategory }) => {
   }
 
   return (
-    <section className="ml-20 border border-gray-300 p-2">
+    <section className="my-2 ml-20 border border-purple-500 p-2">
       <div className="  my-4 flex">
-        <h2>{item.SubcategoryName}</h2>
+        <h2 className="text-2xl">{item.SubcategoryName}</h2>
         <button
-          className="mx-4 rounded-full bg-gray-300 px-4 hover:bg-green-300"
+          className="mx-4 rounded-full bg-gray-300 px-4 hover:bg-purple-500"
           onClick={() => {
             if (subjectArray.length != 0) {
               alert(
@@ -44,10 +44,10 @@ const Individualsubcat = ({ item, removeSubcategory }) => {
             removeSubcategory(item.id_key)
           }}
         >
-          Borrar
+          Borrar Subcategoría
         </button>
       </div>
-      <div className="relative ml-16 border border-gray-300 p-2">
+      <div className="relative ml-16 p-2">
         <h3>Temas</h3>
         <Formsubject item={item} getSubjects={getSubjects} />
         <Subjects subjectArray={subjectArray} removeSubject={removeSubject} />

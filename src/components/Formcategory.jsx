@@ -20,7 +20,7 @@ const Formcategory = ({ getCategories }) => {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div className="my-6">
+      <div className="my-2">
         <input
           type="text"
           value={newItemName}
@@ -33,7 +33,7 @@ const Formcategory = ({ getCategories }) => {
           type="submit"
           className="mx-4 rounded-full bg-gray-300 px-4 hover:bg-sky-700"
         >
-          agregar
+          Agregar Categoria
         </button>
       </div>
     </form>

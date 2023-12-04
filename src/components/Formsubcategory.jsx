@@ -34,7 +34,7 @@ const Formsubcategory = ({ item, getSubcategories }) => {
           type="submit"
           className="mx-4 rounded-full bg-gray-300 px-4 hover:bg-purple-500"
         >
-          agregar
+          Agregar Subcategoria
         </button>
       </div>
     </form>
